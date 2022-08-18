@@ -17,10 +17,12 @@ public class PostModel {
     private Long id;
 
     @NotBlank
-    @Lob
     private String title;
+
     @NotBlank
+    @Lob
     private String text;
+    
     @NotBlank
     private String author;
 
