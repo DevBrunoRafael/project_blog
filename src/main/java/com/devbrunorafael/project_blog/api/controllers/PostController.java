@@ -18,15 +18,23 @@ public class PostController {
 
     @GetMapping("/list")
     public ModelAndView postList(){
-        ModelAndView mv = new ModelAndView("posts");
-        List<PostModel> posts = postService.findAllPosts();
-        mv.addObject("posts", posts);
-        return mv;
+        ModelAndView modelAndView = new ModelAndView("posts");
+        List<PostModel> posts = this.postService.findAllPosts();
+        modelAndView.addObject("posts", posts);
+        return modelAndView;
+    }
+
+    @GetMapping("/{id}")
+    public ModelAndView postDetails(@PathVariable Long id){
+        ModelAndView modelAndView = new ModelAndView("post-details");
+        PostModel post = this.postService.findPost(id);
+        modelAndView.addObject("post", post);
+        return modelAndView;
     }
 
     @PostMapping("/create")
     public PostModel createPost(@RequestBody @Valid PostModel postModel){
-        return postService.savePost(postModel);
+        return this.postService.savePost(postModel);
     }
 
 }
