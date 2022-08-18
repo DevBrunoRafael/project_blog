@@ -16,16 +16,16 @@ public class PostService {
 
     @Transactional
     public List<PostModel> findAllPosts(){
-        return postRepository.findAll();
+        return this.postRepository.findAll();
     }
 
     @Transactional
     public PostModel findPost(Long id){
-        return postRepository.findById(id).get();
+        return this.postRepository.findById(id).get();
     }
 
     @Transactional
     public PostModel savePost(PostModel post){
-        return postRepository.save(post);
+        return this.postRepository.save(post);
     }
 }
