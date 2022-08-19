@@ -12,6 +12,7 @@
             integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
         <link data-th-href="@{/css/posts.css}" rel="stylesheet" />
+        <link data-th-href="@{/css/global.css}" rel="stylesheet" />
         <title>Project Blog</title>
 
     </head>
@@ -21,6 +22,7 @@
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
                     <span class="navbar-brand mb-0 h1">SpringBlog</span>
+                    <a href="/posts/new-post" class="btn btn-light">New Post</a>
                 </div>
             </nav>
         </header>
@@ -28,15 +30,17 @@
         <section class="sec-posts">
             <nav class="bdc" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    <li class="breadcrumb-item active" aria-current="page">Posts</li>
                 </ol>
             </nav>
             <div class="card-container" th:each="post : ${posts}">
                 <div class="card-body">
                     <p class="card-subtitle mb-2 text-muted" th:text="${post.author}"></p>
                     <span class="card-subtitle mb-2 text-muted" th:text="${post.postDate}"></span>
-                    <h4 class="card-title" th:text="${post.title}"></h4>
+                    <a th:href="${(#mvc.url('PC#postDetails').arg(0,post.id)).build()}">
+                        <h4 class="card-title" th:text="${post.title}"></h4>
+                    </a>
+<!--                    <h4 class="card-title" th:text="${post.title}"></h4>-->
                     <p class="card-text" th:text="${post.text}"></p>
                 </div>
             </div>
