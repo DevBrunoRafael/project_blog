@@ -1,15 +1,21 @@
 
-.sec-posts{
+.post-details{
     width: 60vw;
+    height: 90vh;
     margin: 0 auto;
 }
 
-.post-content .card-container .card-body h1{
+.card-container .card-body h1{
     font-weight: 700;
     font-size: 50px;
-    margin-top: 35px;
+    margin: 35px auto 5px;
 }
 
-.post-content .card-container .card-body .post-inf{
+.card-container .card-body .post-inf{
+    font-size: 14px;
     margin: 5px 0 50px;
+}
+
+.card-container .card-body .post-inf i{
+    margin-right: 5px;
 }
