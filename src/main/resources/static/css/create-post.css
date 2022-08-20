@@ -1,4 +1,18 @@
 .sec-posts{
     width: 60vw;
+    height: 90vh;
     margin: 0 auto;
+}
+
+.post-form{
+    padding: 40px;
+    margin-top: 35px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.post-form form .form-buttons{
+    margin: 25px 0 10px;
+}
+.post-form form .form-buttons .btn{
+    margin: 5px 2px;
 }
