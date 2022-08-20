@@ -35,6 +35,7 @@
             </nav>
 
             <div class="post-form">
+                <th:block th:include="msg-valid"></th:block>
                 <form action="/posts/new-post" method="POST" >
                     <div class="mb-3">
                         <input type="text" name="author" class="form-control" placeholder="Autor *">

@@ -44,7 +44,10 @@ public class PostController {
     @PostMapping("/new-post")
     public String savePost(@Valid PostModel postModel, BindingResult result, RedirectAttributes attributes){
         if (result.hasErrors()){
-            return "redirect:/new-post";
+            attributes.addFlashAttribute("message",
+                    "Verifique se os campos obrigatórios foram preenchidos!");
+
+            return "redirect:/posts/new-post";
         }
         postModel.setPostDate(LocalDate.now());
         this.postService.savePost(postModel);

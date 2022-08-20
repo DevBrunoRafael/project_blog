@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Alert</title>
+    </head>
+    <body>
+        <div class="alert alert-danger " role="alert" th:if="${not #strings.isEmpty(message)}">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span th:text="${message}"></span>
+        </div>
+
+        <script src="https://kit.fontawesome.com/0cbc2dbe63.js" crossorigin="anonymous"></script>
+    </body>
+</html>
